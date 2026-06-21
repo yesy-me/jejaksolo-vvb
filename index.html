@@ -960,6 +960,53 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* ===================== READ MORE ===================== */
+.prose-collapsed {
+  max-height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.prose-collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, currentColor);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Fade warna per panel */
+.panel-mg .prose-collapsed::after { background: linear-gradient(to bottom, transparent, #EFF5E6); opacity: 1; }
+.panel-pg .prose-collapsed::after { background: linear-gradient(to bottom, transparent, #FDF6EA); opacity: 1; }
+.panel-bk .prose-collapsed::after { background: linear-gradient(to bottom, transparent, #2D1A2A); opacity: 1; }
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  font-weight: 400;
+  transition: gap 0.2s, opacity 0.2s;
+}
+.read-more-btn:hover { gap: 10px; opacity: 0.7; }
+
+/* Warna per panel */
+.panel-mg .read-more-btn { color: var(--olive); border-bottom: 1px solid var(--olive); }
+.panel-pg .read-more-btn { color: var(--garnet); border-bottom: 1px solid var(--garnet); }
+.panel-bk .read-more-btn { color: var(--gold); border-bottom: 1px solid var(--gold); }
 </style>
 </head>
 <body>
@@ -1069,7 +1116,13 @@
     <p class="dest-eyebrow" data-i18n="mg.eyebrow">01 — Istana Budaya</p>
     <h2 class="dest-name" data-i18n="mg.name">Pura Mangkunegaran</h2>
     <p class="dest-quote" data-i18n="mg.quote">"Masuk ke Mangkunegaran bukan sekadar mengunjungi bangunan tua — ini tentang merasakan napas Jawa yang masih berdenyut di antara pilar-pilarnya."</p>
-    <p class="dest-prose" data-i18n="mg.prose">Istana ini lahir dari perlawanan. Raden Mas Said, seorang pangeran muda yang menolak tunduk, mengangkat senjata selama bertahun-tahun melawan kekuasaan Kasunanan. Bukan karena dendam, tapi karena keyakinan bahwa ada cara lain untuk menjadi Jawa yang bermartabat. Dunia menyebutnya Pangeran Sambernyawa, karena ke mana pun ia pergi, kematian mengikuti musuh-musuhnya.<br><br>Perjuangan itu akhirnya berakhir di meja perundingan Perjanjian Salatiga, pada 1757. Raden Mas Said tidak kalah. Ia mendapat tanah, gelar, dan hak untuk mendirikan kadipaten sendiri. Mangkunegaran bukanlah hadiah, melainkan hasil perjuangan.<br><br>Hari ini, pendopo agungnya masih berdiri kokoh tanpa satu pun paku besi. Hanya kayu jati, pasak, dan ilmu yang diwariskan leluhur. Kalau kamu datang di pagi Rabu atau Sabtu, kamu mungkin akan mendengar gamelan mengalun dari dalam — bukan untuk pertunjukan, tapi karena di sini, seni memang masih cara hidup.</p>
+    <p class="dest-prose prose-collapsed" data-i18n="mg.prose">Berbicara tentang Pura Mangkunegaran, ada baiknya kita terlebih dahulu menjelajah cikal bakal lahirnya Kota Surakarta. Wilayah yang kini kita kenal dengan Surakarta atau Solo merupakan kawasan kekuasaan Mataram Kuno pada abad ke 8-10 sebelum akhirnya berpindah di bawah kerajaan Majapahit. Setelah runtuhnya masa kerajaan, wilayah ini berada di bawah Kesultanan Demak yang kemudian membawa pada masa Kesultanan Mataram Islam pada abad ke 16-18. Namun, akibat pemberontakan dan kerusakan istana dalam peristiwa Geger Pecinan (1742), Pakubuwana II memindah ibu kota ke Desa Sala pada tahun 1745. Gejolak internal dan eksternal dengan VOC melahirkan adanya perjanjian Giyanti 1755 sehingga wilayah Mataram terpecah menjadi Yogyakarta dan Surakarta. Lebih lanjut, Surakarta yang kita kenal saat ini merupakan hasil dari perjanjian Salatiga pada 1757 yang membagi dua pusat kekuasaan yang berdampingan: Kasunanan Surakarta (Keraton Surakarta) dan Kadipaten Mangkunegaran (Pura Mangkunegaran).
+<br><br>Perjalanan yang sangat panjang tersebut menunjukkan lahirnya sebuah istana dari perlawanan gigih oleh Raden Mas Said, seorang pangeran muda yang menolak tunduk, ia mengangkat senjata selama bertahun-tahun melawan kekuasaan Kasunanan. Semboyan perjuangannya, Tiji Tibeh, yang berasal dari bahasa Jawa, yaitu mati siji mati kabeh, mukti siji mukti kabeh, dengan arti "mati satu mati semua, sejahtera satu sejahtera semua" berkembang menjadi filosofi kepemimpinan dan kehidupan sosial di lingkungan Mangkunegaran. Perlawanan Raden Mas Said bukan karena dendam, tapi karena keyakinan bahwa ada cara lain untuk menjadi Jawa yang bermartabat. Dunia menyebutnya Pangeran Sambernyawa, karena ke mana pun ia pergi, kematian mengikuti musuh-musuhnya. Perlawanan yang ia perjuangkan itu akhirnya berakhir di meja perundingan Perjanjian Salatiga. Raden Mas Said tidak kalah. Ia mendapat tanah, gelar, dan hak untuk mendirikan kadipaten sendiri. 
+<br><br>Hari ini, pendopo agung Mangkunegaran masih berdiri kokoh tanpa satu pun paku besi. Hanya kayu jati, pasak, dan ilmu yang diwariskan leluhur. Kalau Anda datang di pagi Rabu atau Sabtu, Anda mungkin akan mendengar gamelan mengalun dari dalam, bukan untuk pertunjukan, tapi karena di sini, seni memang masih merupakan cara hidup, bukan tontonan. Salah satu gamelan di sini yang bernama Kyai Seton telah berusia 100 tahun lebih. Kyai Seton biasanya ditabuh pada hari Sabtu untuk mengiringi upacara-upacara adat. Gamelan lainnya juga masih berfungsi untuk mengiringi upacara adat dan tarian tradisional. 
+<br><br>Di samping itu, jika berkunjung ke lokasi wisata ini, Anda tidak hanya dapat menikmati kemegahan dan keindahan istana Mangkunegaran, tetapi juga bisa mengunjungi museum Ndalem Ageng yang menyimpan berbagai koleksi benda bersejarah. Berwisata juga tidak lengkap apabila tidak dibarengi dengan pengambilan potret di lokasi. Oleh karenanya, Anda bisa berkeliling dan menjepret beberapa gambar di area Pamedan, lapangan hijau yang biasa digunakan sebagai tempat latihan prajurit Mangkunegaran di dekat gapura hijau. Pendopo Ageng, Pringgitan, Keputren, dan Pracimoyasa juga sayang untuk dilewatkan karena arsitekturnya sangat kental dengan budaya Jawa sehingga begitu indah dan magis.  
+<br><br>Jadi tunggu apalagi? Rasakan pengalaman berpetualang di masa lalu melalui dunia modern dengan datang langsung  ke Pura Mangkunegaran.
+</p>
+<button class="read-more-btn" onclick="toggleProse(this)" data-more="Baca Lebih" data-less="Tutup">Baca Lebih ↓</button>
     <div class="dest-info-card">
       <div class="info-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1125,7 +1178,13 @@
     <p class="dest-eyebrow" data-i18n="pg.eyebrow">02 — Pasar Bersejarah</p>
     <h2 class="dest-name" data-i18n="pg.name">Pasar Gede Harjonagoro</h2>
     <p class="dest-quote" data-i18n="pg.quote">"Aroma rempah dan tawa pedagang berpadu di bawah kubah art deco peninggalan Belanda — datanglah sebelum matahari sepenuhnya naik."</p>
-    <p class="dest-prose" data-i18n="pg.prose">Di bawah kubah art deco peninggalan Thomas Karsten (seorang arsitek Belanda yang jatuh cinta pada kota ini) pedagang sudah berderet sejak subuh. Aroma rempah, bau tanah basah dari sayuran segar, dan kepulan uap dari mangkok timlo yang baru selesai dimasak bercampur jadi satu. Ini bukanlah pasar biasa. Ini adalah tempat di mana Solo memulai harinya setiap hari, tanpa gagal, selama ratusan tahun.<br><br>Karsten merancang Pasar Gede pada 1930 dengan cara yang tidak biasa. Ia tidak memaksakan gaya Eropa sepenuhnya. Kubah besarnya yang megah berdialog dengan detail-detail tradisional Jawa, seolah bangunan ini mengerti di mana ia berdiri dan untuk siapa ia dibangun.<br><br>Jangan lewatkan es dawet telasih di sudut kiri, atau cabuk rambak yang dijual di dekat pintu masuk utama. Dan kalau kamu beruntung datang saat Grebeg Sudiroprajan, kamu akan tahu bahwa Solo adalah kota yang merayakan perbedaan dengan cara yang sangat tenang dan sangat indah.</p>
+    <p class="dest-prose prose-collapsed" data-i18n="pg.prose">Di bawah kubah art deco peninggalan Thomas Karsten (seorang arsitek Belanda yang jatuh cinta pada kota ini) pedagang sudah berderet sejak subuh. Aroma rempah, bau tanah basah dari sayuran segar, dan kepulan uap dari mangkok timlo yang baru selesai dimasak bercampur jadi satu. Ini bukanlah pasar biasa. Ini adalah tempat di mana Solo memulai harinya setiap hari, tanpa gagal, selama ratusan tahun. 
+<br><br>Karsten merancang Pasar Gede pada 1930 dengan cara yang tidak biasa. Ia tidak memaksakan gaya Eropa sepenuhnya. Kubah besarnya yang megah berdialog dengan detail-detail tradisional Jawa, seolah bangunan ini mengerti di mana ia berdiri dan untuk siapa ia dibangun. Hasilnya yaitu sebuah pasar yang terasa akrab, bukan asing. Namanya yang unik ternyata sudah ada sejak pertama kali pasar ini dibangun karena bentuk atap di pintu masuknya layaknya singgasana besar. Eksistensinya telah menjadi saksi bisu dari kedua masa pemerintahan berbeda yaitu masa kolonialisme dan masa kemerdekaan. Berdekatan dengan pemukiman Tionghoa dan Klenteng Tien Kok Sie, Pasar ini menjadi salah satu simbol harmoni kehidupan sosial budaya di Surakarta.
+<br><br>Berkunjung kemari, jangan lewatkan es dawet telasih di sudut kiri, atau cabuk rambak yang dijual di dekat pintu masuk utama. Dan kalau Anda beruntung datang saat Grebeg Sudiroprajan, yaitu perayaan tahun baru China yang mengalir sampai ke jalanan di depan pasar, Anda akan tahu bahwa Solo adalah kota yang merayakan perbedaan dengan cara yang sangat tenang dan sangat indah. Tentu saja, latar belakangnya yang epik merupakan hal yang berharga untuk para peminat sejarah yang menyukai arsitektur bergaya Eropa-Jawa yang unik.
+<br><br>Di deretan penjual buah, Anda dapat menemukan Nasi Liwet Bu Sri yang populer di kalangan wisatawan. Jika datang pada pagi hari, jangan lewatkan pula Timlo Sastro yang legendaris dan telah bertahan sejak 1952. Untuk pilihan yang lebih ringan, ada tahok Pak Citro, hidangan peranakan Tionghoa berupa kembang tahu dari sari kedelai yang disajikan dengan kuah jahe hangat dan gula, menghadirkan rasa lembut yang cocok dinikmati di udara pagi yang segar. Bagi pecinta makanan manis, gempol pleret dan lenjongan Yu Sum siap memanjakan lidah. Gempol pleret, minuman berbahan santan dengan isian tepung beras yang kenyal, dikenal luas hingga kerap viral di media sosial. Beragam cita rasa tersebut mencerminkan wajah Pasar Gede yang terbuka bagi siapa saja dan selera apa pun. Di sini, tradisi Jawa, Tionghoa, dan sedikit aksen Eropa serta kehidupan sehari-hari warga Solo berpadu dalam satu ruang yang sama. Seperti Solo sendiri, kota dengan dua keraton yang berjalan dalam satu jejak sejarah.
+<br><br>Jangan hanya dibayangkan, yuk langsung datang dan coba semua kulinernya!
+</p>
+<button class="read-more-btn" onclick="toggleProse(this)" data-more="Baca Lebih" data-less="Tutup">Baca Lebih ↓</button>
     <div class="dest-info-card">
       <div class="info-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1181,7 +1240,13 @@
     <p class="dest-eyebrow" data-i18n="bk.eyebrow">03 — Warisan Budaya</p>
     <h2 class="dest-name" data-i18n="bk.name">Kampung Batik Kauman</h2>
     <p class="dest-quote" data-i18n="bk.quote">"Di kampung ini, canting diwariskan dari tangan ke tangan sejak berabad-abad — setiap titik lilin yang jatuh di atas kain adalah sebuah doa."</p>
-    <p class="dest-prose" data-i18n="bk.prose">Kampung ini dulunya adalah pemukiman para abdi dalem Keraton Kasunanan. Mereka membatik bukan untuk dijual, tapi sebagai bagian dari kehidupan dan cara mereka menjaga koneksi dengan keraton, dengan tradisi, dengan diri sendiri. Motif-motif yang mereka turunkan dari generasi ke generasi bukan sembarang corak — setiap parang, setiap kawung, setiap semen punya makna yang dulu hanya boleh dikenakan oleh mereka yang punya kedudukan.<br><br>Hari ini, lebih dari tiga puluh perajin masih berkarya di sini. Kamu bisa masuk ke rumah-rumah industri mereka bukan sebagai turis yang melihat dari kejauhan, tapi sebagai tamu yang diajak mendekat. Lihat bagaimana canting dipegang, bagaimana lilin panas ditorehkan ke atas kain putih dengan tangan yang sudah hafal setiap gerakan.<br><br>Hasilnya tidak akan sempurna. Tapi mungkin itulah poinnya — bahwa batik tulis yang sesungguhnya tidak pernah soal kesempurnaan, tapi soal waktu, kesabaran, dan tangan manusia yang meninggalkan jejaknya di atas kain.</p>
+    <p class="dest-prose prose collapsed" data-i18n="bk.prose">Kampung ini dulunya adalah pemukiman para abdi bidang keagamaan dalem Keraton Kasunanan. Batik di sana muncul dari para istri-istri abdi dalem yang mempunyai banyak waktu luang. Mereka membatik bukan untuk dijual, tapi sebagai bagian dari kehidupan dan cara mereka menjaga koneksi dengan keraton, dengan tradisi, dengan diri sendiri. Hari ini, lebih dari tiga puluh perajin masih berkarya di sini. Anda bisa masuk ke rumah-rumah industri mereka bukan sebagai turis yang melihat dari kejauhan, tapi sebagai tamu yang diajak mendekat. Di sini, Anda akan menemukan corak batik Kampung Batik Kauman yang identik dengan nuansa klasik dan otentik dengan corak kerajaan. 
+<br><br>Ada salah satu konsep unik yang terjaga dengan baik di kampung batik ini, yaitu ketenangan mendalami batik Solo. Kendaraan tidak diperkenankan untuk masuk di kawasan ini jadi semua pengunjung dapat mengaksesnya dengan berjalan kaki. Kawasan ini identik dengan arsitektur lawas sehingga Anda bisa merasa berteleportasi di masa lalu. Bukan itu saja, gaya arsitektur tersebut juga bisa menjadi latar foto yang menarik.
+<br><br>Kampung Batik Kauman merupakan opsi ideal untuk wisata yang tenang sekaligus edukatif. Anda bisa mempelajari beberapa jenis batik terkenal khas Solo dan bagaimana proses pembuatan batik tersebut. Motif-motif yang diturunkan dari generasi ke generasi bukan sembarang corak. Setiap parang, setiap kawung, setiap semen punya makna yang dulu hanya boleh dikenakan oleh mereka yang punya kedudukan. Salah satu batik Solo yaitu Sidomukti. Batik ini memiliki motif begitu cantik dengan ciri khas berulang dan simetris. Pola batik ini bermakna keseimbangan dan harmoni dalam hidup. Batik lainnya adalah batik Parang. Batik ini bermakna kekuatan dan kepemimpinan. Motif batik parang cukup unik, yaitu ombak yang menyampaikan jiwa bersemangat dan dinamika kehidupan. Jika penasaran, Anda dapat mencari tahu jenis batik khas Solo selengkapnya secara mendalam di Kampung Batik Kauman.
+<br><br>Di samping itu, bukan hanya berbelanja, Anda juga dapat membuat batik Anda sendiri di sini. Salah satu toko yang dapat Anda kunjungi untuk tujuan ini adalah toko Batik Gunawan Setiawan. Toko ini sangat terkenal dan telah berdiri cukup lama selama empat generasi. Di sini, Anda dapat melihat bagaimana canting dipegang, bagaimana lilin panas ditorehkan ke atas kain putih dengan tangan yang sudah hafal setiap gerakan. Kalau Anda mau, Anda bisa mencoba sendiri. Hasilnya tidak akan sempurna. Tapi mungkin itulah poinnya, bahwa batik tulis yang sesungguhnya tidak pernah soal kesempurnaan, tapi soal waktu, kesabaran, dan tangan manusia yang meninggalkan jejaknya di atas kain.
+<br><br>Jadi, saat berkunjung kemari, jangan hanya membawa pulang selembar batik! Cobalah membuatnya sendiri dan bawa pulang cerita yang tertoreh di setiap motifnya!
+</p>
+<button class="read-more-btn" onclick="toggleProse(this)" data-more="Baca Lebih" data-less="Tutup">Baca Lebih ↓</button>
     <div class="dest-info-card">
       <div class="info-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1243,7 +1308,7 @@
         Jl. Adi Sucipto, Laweyan
       </p>
       <div class="hotel-stars">★★★★</div>
-      <p class="hotel-desc" data-i18n="hotel.lorin.desc">"Hotel bintang empat dengan nuansa resort di tengah kota. Taman luas dan fasilitas lengkap — pilihan keluarga yang solid."</p>
+      <p class="hotel-desc" data-i18n="hotel.lorin.desc">"Hotel bintang empat dengan nuansa resort di tengah kota. Taman luas dan fasilitas lengkap merupakan pilihan keluarga yang solid."</p>
       <div class="hotel-tags">
         <span class="hotel-tag">Garden</span>
         <span class="hotel-tag">Kolam Renang</span>
@@ -1303,7 +1368,7 @@
         Jl. Moh. Yamin No.25, Kratonan
       </p>
       <div class="hotel-stars">★★★★</div>
-      <p class="hotel-desc" data-i18n="hotel.azana.desc">"Lokasi paling sentral di Slamet Riyadi — jalan utama Solo yang legendaris. Cocok untuk yang ingin bisa berjalan kaki ke mana-mana."</p>
+      <p class="hotel-desc" data-i18n="hotel.azana.desc">"Hotel industri butik modern di Solo. Temukan semua yang kamu butuhkan, seperti bersantai dengan Netflix dan pilihan kamar yang luas. "</p>
       <div class="hotel-tags">
         <span class="hotel-tag">City Center</span>
         <span class="hotel-tag">Modern</span>
@@ -1323,11 +1388,11 @@
         Jl. Slamet Riyadi No.96, Keprabon
       </p>
       <div class="hotel-stars">★★★</div>
-      <p class="hotel-desc" data-i18n="hotel.ndalem.desc">"Rumah Jawa kuno yang direstorasi menjadi penginapan butik. Kamar dengan arsitektur pendopo asli — pengalaman menginap yang tidak akan terlupakan."</p>
+      <p class="hotel-desc" data-i18n="hotel.ndalem.desc">"Bobobox menawarkan kamar kapsul yang sedan trend di dunia. Meskipun bertipe kapsul, penginapan ini terjamin akan kelengkapan fasilitasnya."</p>
       <div class="hotel-tags">
         <span class="hotel-tag">Minimalis</span>
-        <span class="hotel-tag">Pod Types</span>
-        <span class="hotel-tag">Affordable</span>
+        <span class="hotel-tag">Bertipe Pod</span>
+        <span class="hotel-tag">Terjangau</span>
       </div>
       <p class="hotel-price">Mulai <strong>Rp130.000</strong> <span data-i18n="hotel.permalam">/ malam</span></p>
       <a href="https://bobobox.com/bobopod/jawa-tengah/bobopod-slamet-riyadi-solo-1014/" target="_blank" class="hotel-link" data-i18n="hotel.cta">Lihat detail →</a>
@@ -1392,7 +1457,7 @@
 </footer>
 <div class="footer-bottom">
   <p data-i18n="footer.copy">© 2026 Jejak Solo · Media-based Storytelling untuk Pariwisata Kota Surakarta</p>
-  <p data-i18n="footer.credit">Dibuat sebagai prototype hasil penelitian untuk Kompetisi Riset Unggulan Kota Surakarta 2026</p>
+  <p data-i18n="footer.credit">Dibuat sebagai prototype hasil penelitian untuk Tugas Verbal dan Visual Branding</p>
 </div>
 
 <script>
@@ -1579,6 +1644,20 @@ function setLang(lang) {
 
   // Update html lang attribute
   document.documentElement.lang = lang;
+
+  // Update read-more buttons
+  document.querySelectorAll('.read-more-btn').forEach(btn => {
+  const moreText = lang === 'id' ? 'Baca Lebih' : 'Read More';
+  const lessText = lang === 'id' ? 'Tutup' : 'Collapse';
+  btn.dataset.more = moreText;
+  btn.dataset.less = lessText;
+  // Kalau lagi di state collapsed, update teksnya
+  if (btn.previousElementSibling.classList.contains('prose-collapsed')) {
+    btn.textContent = moreText + ' ↓';
+  } else {
+    btn.textContent = lessText + ' ↑';
+  }
+});
 }
 
 /* =====================================================
@@ -1610,6 +1689,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* =====================================================
+   READ MORE TOGGLE
+   ===================================================== */
+function toggleProse(btn) {
+  const prose = btn.previousElementSibling;
+  const isCollapsed = prose.classList.contains('prose-collapsed');
+  
+  if (isCollapsed) {
+    prose.classList.remove('prose-collapsed');
+    btn.textContent = btn.dataset.less + ' ↑';
+  } else {
+    prose.classList.add('prose-collapsed');
+    btn.textContent = btn.dataset.more + ' ↓';
+  }
+}
 </script>
 </body>
 </html>
