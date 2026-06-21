@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JejakSolo.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bistre: #210100;
+    --garnet: #8C0902;
+    --indian: #B14A36;
+    --gold: #E6A341;
+    --butter: #FECE79;
+    --burg: #710927;
+    --walnut: #92643E;
+    --antique: #B58C4F;
+    --champagne: #D9C3A6;
+    --cream: #FFF8EE;
+    --ivory: #FFFAF2;
+    --olive: #4A5C2A;
+    --sage: #7A8C5A;
+    --midnight: #2D1A2A;
+    --plum: #1A0A18;
+  }
+
+  html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--cream);
+    color: var(--bistre);
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+  }
+
+  /* ===================== NAVBAR ===================== */
+  .navbar {
+    background-color: var(--bistre);
+    background-image: url('Parang_3.jpg');
+    background-repeat: repeat;
+    background-size: 500px auto;
+    background-blend-mode: overlay;
+    background-position: top left;
+    padding: 0 56px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--garnet);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--butter); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: rgba(217,195,166,1);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-btn {
+    background: var(--garnet) !important;
+    color: var(--butter) !important;
+    padding: 9px 22px;
+    font-size: 12px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase;
+    font-weight: 400 !important;
+    transition: background 0.2s !important;
+    border-radius: 0;
+  }
+  .nav-btn:hover { background: var(--indian) !important; }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid rgba(230,163,65,0.35);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    background: transparent !important;
+    color: rgba(217,195,166,0.6) !important;
+    padding: 5px 11px !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 400 !important;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, color 0.2s !important;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .lang-btn.active {
+    background: rgba(230,163,65,0.2) !important;
+    color: var(--gold) !important;
+  }
+  .lang-btn:hover:not(.active) {
+    color: var(--champagne) !important;
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    background: var(--ivory);
+    position: relative;
+    overflow: hidden;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding-bottom: 300px;
+    animation: heroFadeIn 1.2s ease forwards;
+  }
+
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--garnet);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 68px;
+    color: var(--bistre);
+    line-height: 1.05;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .hero-title em { color: var(--garnet); font-style: italic; font-weight: 600; }
+
+  .hero-sub {
+    font-family: 'Crimson Pro', serif;
+    font-size: 20px;
+    color: var(--walnut);
+    font-style: italic;
+    margin-bottom: 32px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    background: var(--garnet);
+    color: var(--butter);
+    border: none;
+    padding: 15px 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+  }
+  .hero-btn:hover { background: var(--indian); transform: translateY(-1px); }
+
+  .hero-scene {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  /* ===================== SCROLL STRIP ===================== */
+  .scroll-strip {
+    background: var(--garnet);
+    overflow: hidden;
+    white-space: nowrap;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    position: relative;
+  }
+
+  .scroll-track {
+    display: inline-flex;
+    align-items: center;
+    animation: stripScroll 30s linear infinite;
+    will-change: transform;
+  }
+  @keyframes stripScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .strip-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--butter);
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+
+  .strip-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===================== BATIK PENGANTAR ===================== */
+  .batik-section {
+    background-color: var(--bistre);
+    background-image: url('Parang_3.jpg');
+    background-repeat: repeat;
+    background-size: 500px auto;
+    background-blend-mode: overlay;
+    padding: 88px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .batik-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 80px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .batik-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .batik-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .batik-title em { color: var(--gold); font-style: italic; }
+
+  .batik-rule {
+    width: 56px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+    opacity: 0.5;
+  }
+
+  .batik-body {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    line-height: 1.95;
+    color: rgba(255,248,238,0.62);
+    font-style: italic;
+  }
+
+  /* ===================== DESTINATION PANELS ===================== */
+  section#destinasi {
+    padding: 0;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+  }
+
+  .dest-panel {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: 480px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .dest-panel.flip {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .dest-panel.flip .col-collage { order: 2; grid-column: 2; }
+  .dest-panel.flip .col-text    { order: 1; grid-column: 1; }
+
+  .col-collage {
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .col-text {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 48px 64px;
+  }
+
+  .photo-slot {
+    position: absolute;
+    overflow: hidden;
+    max-width: 100%;
+    transition: transform 0.3s ease, z-index 0s;
+  }
+  .photo-slot:hover { transform: scale(1.03) rotate(0deg) !important; z-index: 10 !important; }
+
+  .photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(33,1,0,0.55);
+    padding: 6px 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(254,206,121,0.85);
+    font-weight: 300;
+  }
+
+  .dest-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .dest-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+
+  .dest-quote {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    line-height: 1.85;
+    font-style: italic;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid;
+    font-weight: 400;
+  }
+
+  .dest-prose {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  .dest-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding-bottom: 3px;
+    border-bottom: 1px solid;
+    font-weight: 400;
+    transition: gap 0.2s, opacity 0.2s;
+    text-decoration: none;
+  }
+  .dest-cta:hover { gap: 14px; opacity: 0.75; }
+
+  /* Panel colors */
+  .panel-mg { background: #EFF5E6; }
+  .panel-mg .dest-eyebrow { color: var(--olive); }
+  .panel-mg .dest-name   { color: #1A2A0A; }
+  .panel-mg .dest-quote  { border-color: var(--olive); color: #2A3A1A; }
+  .panel-mg .dest-prose  { color: rgba(26,42,10,0.6); }
+  .panel-mg .dest-cta    { color: var(--olive); border-color: var(--olive); }
+
+  .panel-pg { background: #FDF6EA; }
+  .panel-pg .dest-eyebrow { color: var(--garnet); }
+  .panel-pg .dest-name   { color: var(--bistre); }
+  .panel-pg .dest-quote  { border-color: var(--garnet); color: #3A1A0A; }
+  .panel-pg .dest-prose  { color: rgba(33,1,0,0.6); }
+  .panel-pg .dest-cta    { color: var(--garnet); border-color: var(--garnet); }
+
+  .panel-bk { background: var(--midnight); }
+  .panel-bk .dest-eyebrow { color: var(--gold); }
+  .panel-bk .dest-name   { color: var(--cream); }
+  .panel-bk .dest-quote  { border-color: var(--gold); color: rgba(255,248,238,0.82); }
+  .panel-bk .dest-prose  { color: rgba(255,248,238,0.5); }
+  .panel-bk .dest-cta    { color: var(--gold); border-color: var(--gold); }
+
+  /* ===================== DEST INFO CARD ===================== */
+  .dest-info-card {
+    display: flex;
+    margin-bottom: 28px;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .dest-info-card .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 20px;
+    flex: 1;
+  }
+
+  .dest-info-card .info-item + .info-item { border-left: 1px solid; }
+
+  .dest-info-card .info-label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 3px;
+    opacity: 0.6;
+  }
+
+  .dest-info-card .info-value {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .dest-info-card .info-maps {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    margin-top: 4px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+  .dest-info-card .info-maps:hover { opacity: 1; }
+
+  .panel-mg .dest-info-card { background: rgba(74,92,42,0.08); border: 1px solid rgba(74,92,42,0.2); }
+  .panel-mg .dest-info-card .info-item + .info-item { border-color: rgba(74,92,42,0.15); }
+  .panel-mg .dest-info-card .info-label,
+  .panel-mg .dest-info-card .info-value,
+  .panel-mg .dest-info-card .info-maps,
+  .panel-mg .dest-info-card svg { color: #2A3A0A; }
+
+  .panel-pg .dest-info-card { background: rgba(140,9,2,0.05); border: 1px solid rgba(140,9,2,0.15); }
+  .panel-pg .dest-info-card .info-item + .info-item { border-color: rgba(140,9,2,0.1); }
+  .panel-pg .dest-info-card .info-label,
+  .panel-pg .dest-info-card .info-value,
+  .panel-pg .dest-info-card .info-maps,
+  .panel-pg .dest-info-card svg { color: #3A1A0A; }
+
+  .panel-bk .dest-info-card { background: rgba(230,163,65,0.08); border: 1px solid rgba(230,163,65,0.22); }
+  .panel-bk .dest-info-card .info-item + .info-item { border-color: rgba(230,163,65,0.15); }
+  .panel-bk .dest-info-card .info-label,
+  .panel-bk .dest-info-card .info-value,
+  .panel-bk .dest-info-card .info-maps,
+  .panel-bk .dest-info-card svg { color: rgba(255,248,238,0.75); }
+
+  /* ===================== HOTEL SECTION ===================== */
+  .hotel-section {
+    background: var(--ivory);
+    padding: 88px 80px;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid var(--gold);
+  }
+
+  .hotel-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .hotel-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--garnet);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .hotel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: var(--bistre);
+    line-height: 1.15;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .hotel-title em { color: var(--garnet); font-style: italic; }
+
+  .hotel-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    color: var(--walnut);
+    font-style: italic;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(146,100,62,0.15);
+  }
+
+  .hotel-card {
+    background: var(--cream);
+    padding: 36px 32px;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+  }
+  .hotel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(33,1,0,0.12);
+    z-index: 2;
+  }
+
+  .hotel-tier {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--garnet);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--bistre);
+    margin-bottom: 6px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .hotel-area {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--walnut);
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+  }
+
+  .hotel-desc {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: rgba(33,1,0,0.6);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .hotel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .hotel-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--walnut);
+    border: 1px solid rgba(146,100,62,0.3);
+    padding: 3px 9px;
+  }
+
+  .hotel-price {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--bistre);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .hotel-price span {
+    color: var(--garnet);
+    font-weight: 400;
+    font-size: 11px;
+  }
+
+  .hotel-stars {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .hotel-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--garnet);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(140,9,2,0.3);
+    padding-bottom: 2px;
+    transition: gap 0.2s, border-color 0.2s;
+  }
+  .hotel-link:hover { gap: 10px; border-color: var(--garnet); }
+
+  .hotel-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--garnet);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .hotel-card:hover .hotel-accent { transform: scaleX(1); }
+
+  .hotel-note {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(33,1,0,0.4);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===================== TESTIMONIAL STRIP ===================== */
+  .testi-section {
+    background: var(--garnet);
+    padding: 72px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testi-section::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 280px;
+    color: rgba(255,248,238,0.05);
+    position: absolute;
+    top: -40px;
+    left: 48px;
+    line-height: 1;
+    pointer-events: none;
+    font-style: italic;
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .testi-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--butter);
+    margin-bottom: 48px;
+    text-align: center;
+    opacity: 0.7;
+    grid-column: 1 / -1;
+  }
+
+  .testi-card {
+    border-top: 2px solid rgba(254,206,121,0.4);
+    padding-top: 24px;
+  }
+
+  .testi-text {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+
+  .testi-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  /* ===================== CLOSING CTA ===================== */
+  .closing-section {
+    background-color: var(--bistre);
+    background-image: url('Parang_3.jpg');
+    background-repeat: repeat;
+    background-size: 500px auto;
+    background-blend-mode: overlay;
+    padding: 88px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .closing-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; padding: 0 40px; }
+
+  .closing-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    opacity: 0.8;
+  }
+
+  .closing-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  .closing-title em { color: var(--gold); font-style: italic; }
+
+  .closing-body {
+    font-family: 'Crimson Pro', serif;
+    font-size: 19px;
+    color: rgba(255,248,238,0.58);
+    font-style: italic;
+    line-height: 1.85;
+    margin-bottom: 40px;
+  }
+
+  .closing-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--garnet);
+    color: var(--butter);
+    padding: 15px 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--indian); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    padding: 14px 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(230,163,65,0.5);
+    cursor: pointer;
+    font-weight: 400;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--butter); }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: #0D0000;
+    border-top: 3px solid var(--garnet);
+    padding: 56px 80px 28px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 56px;
+  }
+
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 26px;
+    display: block;
+    margin-bottom: 12px;
+    text-decoration: none;
+  }
+  .footer-brand-name em { color: var(--butter); font-style: italic; }
+
+  .footer-tagline {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    color: rgba(217,195,166,0.4);
+    font-style: italic;
+    line-height: 1.7;
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+
+  .footer-badge {
+    display: inline-block;
+    background: rgba(140,9,2,0.3);
+    border: 1px solid rgba(140,9,2,0.5);
+    color: var(--indian);
+    padding: 5px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .fcol-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    font-weight: 400;
+  }
+
+  .fcol a {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(217,195,166,0.42);
+    text-decoration: none;
+    margin-bottom: 9px;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .fcol a:hover { color: rgba(217,195,166,0.85); }
+
+  .footer-bottom {
+    background: #050000;
+    padding: 16px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(140,9,2,0.2);
+  }
+
+  .footer-bottom p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: rgba(217,195,166,0.5);
+    font-weight: 300;
+  }
+
+  .footer-gold-line {
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.12;
+    margin: 32px 0 0;
+    grid-column: 1 / -1;
+  }
+
+  /* ===================== SCROLL REVEAL ===================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar">
+  <a href="#beranda" class="nav-logo">Jejak <em>Solo</em></a>
+  <div class="nav-links">
+    <a href="#beranda" data-i18n="nav.beranda">Beranda</a>
+    <a href="#destinasi" data-i18n="nav.destinasi">Destinasi</a>
+    <a href="#menginap" data-i18n="nav.menginap">Menginap</a>
+    <a href="#cerita" data-i18n="nav.cerita">Cerita</a>
+    <a href="#tentang" data-i18n="nav.tentang">Tentang</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('id')">ID</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="beranda">
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-i18n="hero.eyebrow">Sugeng Rawuh ing Kitha Budaya</p>
+    <h1 class="hero-title">Menapak <em>Jejak</em><br><span data-i18n="hero.title-2">Kota Solo</span></h1>
+    <p class="hero-sub" data-i18n="hero.sub">Di sini, waktu bergerak lebih lambat — dan setiap sudut menyimpan cerita.</p>
+  </div>
+  <div class="hero-scene">
+    <img src="Landing_Page.png" alt="Ilustrasi Kota Solo" style="width:100%;display:block;object-fit:cover;object-position:center bottom">
+    <p style="position:absolute;bottom:6px;right:12px;font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(33,1,0,1);letter-spacing:1px;margin:0;z-index:20;">Ilustrasi © Pemerintah Daerah Kota Surakarta</p>
+  </div>
+</section>
+
+<!-- ===================== SCROLL STRIP ===================== -->
+<div class="scroll-strip">
+  <div class="scroll-track">
+    <span class="strip-item">Pura Mangkunegaran</span><span class="strip-dot"></span>
+    <svg width="54" height="38" viewBox="0 0 54 38" style="flex-shrink:0;margin:0 6px" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="29" r="8" stroke="#FECE79" stroke-width="2" fill="none"/><circle cx="11" cy="29" r="3" fill="#FECE79"/><circle cx="41" cy="31" r="5" stroke="#FECE79" stroke-width="1.5" fill="none"/><circle cx="41" cy="31" r="2" fill="#FECE79"/><path d="M11 29 L16 22 L37 20 L41 27" stroke="#8C0902" stroke-width="2" fill="none"/><path d="M16 22 L18 8" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M37 20 L39 14" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M17 8 C22 1 35 0 40 7 L40 18 C35 22 22 23 17 18 Z" fill="#8C0902"/><path d="M17 18 L19 24 L22 18 L25 24 L28 18 L31 24 L34 18 L37 24 L40 18" stroke="#FECE79" stroke-width="1" fill="none"/><path d="M17 8 C22 1 35 0 40 7" stroke="#E6A341" stroke-width="1.5" fill="none"/><rect x="19" y="18" width="20" height="10" rx="2" fill="#B14A36" opacity="0.85"/><circle cx="25" cy="16" r="3" fill="#FECE79" opacity="0.75"/><circle cx="33" cy="15" r="3" fill="#D9C3A6" opacity="0.65"/><path d="M40 21 C44 19 48 20 49 23" stroke="#B58C4F" stroke-width="2" fill="none"/><rect x="48" y="20" width="6" height="11" rx="2" fill="#710927"/></svg>
+    <span class="strip-item">Pasar Gede Harjonagoro</span><span class="strip-dot"></span>
+    <span class="strip-item">Kampung Batik Kauman</span><span class="strip-dot"></span>
+    <svg width="54" height="38" viewBox="0 0 54 38" style="flex-shrink:0;margin:0 6px" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="29" r="8" stroke="#FECE79" stroke-width="2" fill="none"/><circle cx="11" cy="29" r="3" fill="#FECE79"/><circle cx="41" cy="31" r="5" stroke="#FECE79" stroke-width="1.5" fill="none"/><circle cx="41" cy="31" r="2" fill="#FECE79"/><path d="M11 29 L16 22 L37 20 L41 27" stroke="#8C0902" stroke-width="2" fill="none"/><path d="M16 22 L18 8" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M37 20 L39 14" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M17 8 C22 1 35 0 40 7 L40 18 C35 22 22 23 17 18 Z" fill="#8C0902"/><path d="M17 18 L19 24 L22 18 L25 24 L28 18 L31 24 L34 18 L37 24 L40 18" stroke="#FECE79" stroke-width="1" fill="none"/><path d="M17 8 C22 1 35 0 40 7" stroke="#E6A341" stroke-width="1.5" fill="none"/><rect x="19" y="18" width="20" height="10" rx="2" fill="#B14A36" opacity="0.85"/><circle cx="25" cy="16" r="3" fill="#FECE79" opacity="0.75"/><circle cx="33" cy="15" r="3" fill="#D9C3A6" opacity="0.65"/><path d="M40 21 C44 19 48 20 49 23" stroke="#B58C4F" stroke-width="2" fill="none"/><rect x="48" y="20" width="6" height="11" rx="2" fill="#710927"/></svg>
+    <span class="strip-item">Keraton Kasunanan</span><span class="strip-dot"></span>
+    <span class="strip-item">Museum Radya Pustaka</span><span class="strip-dot"></span>
+    <svg width="54" height="38" viewBox="0 0 54 38" style="flex-shrink:0;margin:0 6px" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="29" r="8" stroke="#FECE79" stroke-width="2" fill="none"/><circle cx="11" cy="29" r="3" fill="#FECE79"/><circle cx="41" cy="31" r="5" stroke="#FECE79" stroke-width="1.5" fill="none"/><circle cx="41" cy="31" r="2" fill="#FECE79"/><path d="M11 29 L16 22 L37 20 L41 27" stroke="#8C0902" stroke-width="2" fill="none"/><path d="M16 22 L18 8" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M37 20 L39 14" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M17 8 C22 1 35 0 40 7 L40 18 C35 22 22 23 17 18 Z" fill="#8C0902"/><path d="M17 18 L19 24 L22 18 L25 24 L28 18 L31 24 L34 18 L37 24 L40 18" stroke="#FECE79" stroke-width="1" fill="none"/><path d="M17 8 C22 1 35 0 40 7" stroke="#E6A341" stroke-width="1.5" fill="none"/><rect x="19" y="18" width="20" height="10" rx="2" fill="#B14A36" opacity="0.85"/><circle cx="25" cy="16" r="3" fill="#FECE79" opacity="0.75"/><circle cx="33" cy="15" r="3" fill="#D9C3A6" opacity="0.65"/><path d="M40 21 C44 19 48 20 49 23" stroke="#B58C4F" stroke-width="2" fill="none"/><rect x="48" y="20" width="6" height="11" rx="2" fill="#710927"/></svg>
+    <span class="strip-item">Taman Balekambang</span><span class="strip-dot"></span>
+    <span class="strip-item">Manahan</span><span class="strip-dot"></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="strip-item">Pura Mangkunegaran</span><span class="strip-dot"></span>
+    <svg width="54" height="38" viewBox="0 0 54 38" style="flex-shrink:0;margin:0 6px" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="29" r="8" stroke="#FECE79" stroke-width="2" fill="none"/><circle cx="11" cy="29" r="3" fill="#FECE79"/><circle cx="41" cy="31" r="5" stroke="#FECE79" stroke-width="1.5" fill="none"/><circle cx="41" cy="31" r="2" fill="#FECE79"/><path d="M11 29 L16 22 L37 20 L41 27" stroke="#8C0902" stroke-width="2" fill="none"/><path d="M16 22 L18 8" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M37 20 L39 14" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M17 8 C22 1 35 0 40 7 L40 18 C35 22 22 23 17 18 Z" fill="#8C0902"/><path d="M17 18 L19 24 L22 18 L25 24 L28 18 L31 24 L34 18 L37 24 L40 18" stroke="#FECE79" stroke-width="1" fill="none"/><path d="M17 8 C22 1 35 0 40 7" stroke="#E6A341" stroke-width="1.5" fill="none"/><rect x="19" y="18" width="20" height="10" rx="2" fill="#B14A36" opacity="0.85"/><circle cx="25" cy="16" r="3" fill="#FECE79" opacity="0.75"/><circle cx="33" cy="15" r="3" fill="#D9C3A6" opacity="0.65"/><path d="M40 21 C44 19 48 20 49 23" stroke="#B58C4F" stroke-width="2" fill="none"/><rect x="48" y="20" width="6" height="11" rx="2" fill="#710927"/></svg>
+    <span class="strip-item">Pasar Gede Harjonagoro</span><span class="strip-dot"></span>
+    <span class="strip-item">Kampung Batik Kauman</span><span class="strip-dot"></span>
+    <svg width="54" height="38" viewBox="0 0 54 38" style="flex-shrink:0;margin:0 6px" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="29" r="8" stroke="#FECE79" stroke-width="2" fill="none"/><circle cx="11" cy="29" r="3" fill="#FECE79"/><circle cx="41" cy="31" r="5" stroke="#FECE79" stroke-width="1.5" fill="none"/><circle cx="41" cy="31" r="2" fill="#FECE79"/><path d="M11 29 L16 22 L37 20 L41 27" stroke="#8C0902" stroke-width="2" fill="none"/><path d="M16 22 L18 8" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M37 20 L39 14" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M17 8 C22 1 35 0 40 7 L40 18 C35 22 22 23 17 18 Z" fill="#8C0902"/><path d="M17 18 L19 24 L22 18 L25 24 L28 18 L31 24 L34 18 L37 24 L40 18" stroke="#FECE79" stroke-width="1" fill="none"/><path d="M17 8 C22 1 35 0 40 7" stroke="#E6A341" stroke-width="1.5" fill="none"/><rect x="19" y="18" width="20" height="10" rx="2" fill="#B14A36" opacity="0.85"/><circle cx="25" cy="16" r="3" fill="#FECE79" opacity="0.75"/><circle cx="33" cy="15" r="3" fill="#D9C3A6" opacity="0.65"/><path d="M40 21 C44 19 48 20 49 23" stroke="#B58C4F" stroke-width="2" fill="none"/><rect x="48" y="20" width="6" height="11" rx="2" fill="#710927"/></svg>
+    <span class="strip-item">Keraton Kasunanan</span><span class="strip-dot"></span>
+    <span class="strip-item">Museum Radya Pustaka</span><span class="strip-dot"></span>
+    <svg width="54" height="38" viewBox="0 0 54 38" style="flex-shrink:0;margin:0 6px" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="29" r="8" stroke="#FECE79" stroke-width="2" fill="none"/><circle cx="11" cy="29" r="3" fill="#FECE79"/><circle cx="41" cy="31" r="5" stroke="#FECE79" stroke-width="1.5" fill="none"/><circle cx="41" cy="31" r="2" fill="#FECE79"/><path d="M11 29 L16 22 L37 20 L41 27" stroke="#8C0902" stroke-width="2" fill="none"/><path d="M16 22 L18 8" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M37 20 L39 14" stroke="#8C0902" stroke-width="1.5" fill="none"/><path d="M17 8 C22 1 35 0 40 7 L40 18 C35 22 22 23 17 18 Z" fill="#8C0902"/><path d="M17 18 L19 24 L22 18 L25 24 L28 18 L31 24 L34 18 L37 24 L40 18" stroke="#FECE79" stroke-width="1" fill="none"/><path d="M17 8 C22 1 35 0 40 7" stroke="#E6A341" stroke-width="1.5" fill="none"/><rect x="19" y="18" width="20" height="10" rx="2" fill="#B14A36" opacity="0.85"/><circle cx="25" cy="16" r="3" fill="#FECE79" opacity="0.75"/><circle cx="33" cy="15" r="3" fill="#D9C3A6" opacity="0.65"/><path d="M40 21 C44 19 48 20 49 23" stroke="#B58C4F" stroke-width="2" fill="none"/><rect x="48" y="20" width="6" height="11" rx="2" fill="#710927"/></svg>
+    <span class="strip-item">Taman Balekambang</span><span class="strip-dot"></span>
+    <span class="strip-item">Manahan</span><span class="strip-dot"></span>
+  </div>
+</div>
+
+<!-- ===================== BATIK PENGANTAR ===================== -->
+<section class="batik-section">
+  <div class="batik-inner reveal">
+    <p class="batik-label" data-i18n="batik.label">Warisan yang Hidup</p>
+    <h2 class="batik-title" data-i18n="batik.title">Solo bukan sekadar kota,<br>ia adalah <em>cerita</em> yang tak selesai</h2>
+    <div class="batik-rule"></div>
+    <p class="batik-body" data-i18n="batik.body">Tiga destinasi. Tiga karakter. Tiga cara berbeda untuk memahami mengapa Solo disebut kota yang tak pernah kehilangan jiwanya. Dari pendopo yang megah, kubah pasar yang berderit di pagi buta, hingga lorong kampung yang berbau lilin batik — semuanya menunggu untuk diceritakan.</p>
+  </div>
+</section>
+
+<!-- ===================== DESTINATIONS ===================== -->
+<section id="destinasi">
+
+<div style="line-height:0;margin:0;padding:0;margin-top:-2px">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px">
+    <defs><linearGradient id="wave-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#210100"/><stop offset="100%" stop-color="#EFF5E6"/></linearGradient></defs>
+    <rect width="1440" height="80" fill="url(#wave-grad)"/>
+    <path d="M0,0 C360,80 1080,0 1440,60 L1440,80 L0,80 Z" fill="#EFF5E6"/>
+  </svg>
+</div>
+
+<!-- MANGKUNEGARAN -->
+<div class="dest-panel panel-mg" id="mangkunegaran">
+  <div class="col-collage">
+    <div class="photo-slot" style="left:7%;top:5%;width:57%;height:50%;transform:rotate(-2deg);border:5px solid #4A5C2A;z-index:3">
+      <img src="Pendopo_Mangkunegaran.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Pendopo Mangkunegaran">
+      <div class="photo-placeholder" style="background:#C8A050;display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px">Pendopo Agung</span></div>
+      <div class="photo-caption">Pendopo Mangkunegaran</div>
+    </div>
+    <div class="photo-slot" style="right:3%;top:6%;width:38%;height:36%;transform:rotate(2.5deg);border:5px solid #4A5C2A;z-index:2">
+      <img src="Taman_Keputren.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Taman Keputren">
+      <div class="photo-placeholder" style="background:#B08040;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Detail Ukiran</span></div>
+      <div class="photo-caption">Taman Keputren</div>
+    </div>
+    <div class="photo-slot" style="left:11%;bottom:5%;width:44%;height:40%;transform:rotate(1.5deg);border:5px solid #4A5C2A;z-index:4">
+      <img src="Ruang_Keluarga_Mangkunegaran.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Ruang Keluarga">
+      <div class="photo-placeholder" style="background:#9A6830;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Latihan Gamelan</span></div>
+      <div class="photo-caption">Ruang Keluarga Kerajaan</div>
+    </div>
+    <div class="photo-slot" style="right:5%;bottom:6%;width:34%;height:33%;transform:rotate(-2deg);border:5px solid #4A5C2A;z-index:1">
+      <img src="Taman_Pura_Mangkunegaran.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Taman Pura">
+      <div class="photo-placeholder" style="background:#D4B070;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Pusaka</span></div>
+      <div class="photo-caption">Restoran Pracima Tuin</div>
+    </div>
+  </div>
+  <div class="col-text">
+    <p class="dest-eyebrow" data-i18n="mg.eyebrow">01 — Istana Budaya</p>
+    <h2 class="dest-name" data-i18n="mg.name">Pura Mangkunegaran</h2>
+    <p class="dest-quote" data-i18n="mg.quote">"Masuk ke Mangkunegaran bukan sekadar mengunjungi bangunan tua — ini tentang merasakan napas Jawa yang masih berdenyut di antara pilar-pilarnya."</p>
+    <p class="dest-prose" data-i18n="mg.prose">Istana ini lahir dari perlawanan. Raden Mas Said, seorang pangeran muda yang menolak tunduk, mengangkat senjata selama bertahun-tahun melawan kekuasaan Kasunanan. Bukan karena dendam, tapi karena keyakinan bahwa ada cara lain untuk menjadi Jawa yang bermartabat. Dunia menyebutnya Pangeran Sambernyawa, karena ke mana pun ia pergi, kematian mengikuti musuh-musuhnya.<br><br>Perjuangan itu akhirnya berakhir di meja perundingan Perjanjian Salatiga, pada 1757. Raden Mas Said tidak kalah. Ia mendapat tanah, gelar, dan hak untuk mendirikan kadipaten sendiri. Mangkunegaran bukanlah hadiah, melainkan hasil perjuangan.<br><br>Hari ini, pendopo agungnya masih berdiri kokoh tanpa satu pun paku besi. Hanya kayu jati, pasak, dan ilmu yang diwariskan leluhur. Kalau kamu datang di pagi Rabu atau Sabtu, kamu mungkin akan mendengar gamelan mengalun dari dalam — bukan untuk pertunjukan, tapi karena di sini, seni memang masih cara hidup.</p>
+    <div class="dest-info-card">
+      <div class="info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div>
+          <span class="info-label" data-i18n="info.jam">Jam Buka</span>
+          <span class="info-value" data-i18n="mg.jam">Selasa – Minggu, 09.00 – 14.00 WIB</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <span class="info-label" data-i18n="info.lokasi">Lokasi</span>
+          <span class="info-value">Jl. Ronggowarsito, Keprabon, Banjarsari</span>
+          <a class="info-maps" href="https://maps.google.com/?q=Pura+Mangkunegaran+Solo" target="_blank" data-i18n="info.maps">Buka di Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wave divider -->
+<div style="background:#EFF5E6;line-height:0;margin:0;padding:0">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px">
+    <path d="M0,0 C360,80 1080,0 1440,60 L1440,80 L0,80 Z" fill="#FDF6EA"/>
+  </svg>
+</div>
+
+<!-- PASAR GEDE -->
+<div class="dest-panel panel-pg flip" id="pasargede">
+  <div class="col-collage">
+    <div class="photo-slot" style="left:5%;top:6%;width:55%;height:49%;transform:rotate(2deg);border:5px solid #92643E;z-index:3">
+      <img src="Tugu_Kubah.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Kubah Pasar Gede">
+      <div class="photo-placeholder" style="background:#7A9040;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Kubah Art Deco</span></div>
+      <div class="photo-caption">Tugu jam & kubah art deco</div>
+    </div>
+    <div class="photo-slot" style="right:3%;top:5%;width:39%;height:35%;transform:rotate(-2.5deg);border:5px solid #92643E;z-index:2">
+      <img src="Suasana_Malam_Hari_Imlek.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Suasana Malam">
+      <div class="photo-placeholder" style="background:#6A8030;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Pagi Hari</span></div>
+      <div class="photo-caption">Suasana malam hari ketika Imlek</div>
+    </div>
+    <div class="photo-slot" style="left:10%;bottom:5%;width:43%;height:40%;transform:rotate(-1.5deg);border:5px solid #92643E;z-index:4">
+      <img src="Aneka_Jajanan_Pasar.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Jajanan Pasar">
+      <div class="photo-placeholder" style="background:#8AAA50;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Jajanan Pasar</span></div>
+      <div class="photo-caption">Aneka jajanan pasar</div>
+    </div>
+    <div class="photo-slot" style="right:5%;bottom:4%;width:36%;height:35%;transform:rotate(2deg);border:5px solid #92643E;z-index:1">
+      <img src="Arena_Kuliner.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Arena Kuliner">
+      <div class="photo-placeholder" style="background:#5A7020;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)">Lorong Dalam</span></div>
+      <div class="photo-caption">Lorong dalam arena kuliner</div>
+    </div>
+  </div>
+  <div class="col-text">
+    <p class="dest-eyebrow" data-i18n="pg.eyebrow">02 — Pasar Bersejarah</p>
+    <h2 class="dest-name" data-i18n="pg.name">Pasar Gede Harjonagoro</h2>
+    <p class="dest-quote" data-i18n="pg.quote">"Aroma rempah dan tawa pedagang berpadu di bawah kubah art deco peninggalan Belanda — datanglah sebelum matahari sepenuhnya naik."</p>
+    <p class="dest-prose" data-i18n="pg.prose">Di bawah kubah art deco peninggalan Thomas Karsten (seorang arsitek Belanda yang jatuh cinta pada kota ini) pedagang sudah berderet sejak subuh. Aroma rempah, bau tanah basah dari sayuran segar, dan kepulan uap dari mangkok timlo yang baru selesai dimasak bercampur jadi satu. Ini bukanlah pasar biasa. Ini adalah tempat di mana Solo memulai harinya setiap hari, tanpa gagal, selama ratusan tahun.<br><br>Karsten merancang Pasar Gede pada 1930 dengan cara yang tidak biasa. Ia tidak memaksakan gaya Eropa sepenuhnya. Kubah besarnya yang megah berdialog dengan detail-detail tradisional Jawa, seolah bangunan ini mengerti di mana ia berdiri dan untuk siapa ia dibangun.<br><br>Jangan lewatkan es dawet telasih di sudut kiri, atau cabuk rambak yang dijual di dekat pintu masuk utama. Dan kalau kamu beruntung datang saat Grebeg Sudiroprajan, kamu akan tahu bahwa Solo adalah kota yang merayakan perbedaan dengan cara yang sangat tenang dan sangat indah.</p>
+    <div class="dest-info-card">
+      <div class="info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div>
+          <span class="info-label" data-i18n="info.jam">Jam Buka</span>
+          <span class="info-value" data-i18n="pg.jam">Setiap hari, 06.00 – 17.00 WIB</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <span class="info-label" data-i18n="info.lokasi">Lokasi</span>
+          <span class="info-value">Jl. Jend. Urip Sumoharjo, Sudiroprajan</span>
+          <a class="info-maps" href="https://maps.google.com/?q=Pasar+Gede+Harjonagoro+Solo" target="_blank" data-i18n="info.maps">Buka di Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wave divider -->
+<div style="background:#FDF6EA;line-height:0;margin:0;padding:0">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px">
+    <path d="M0,0 C360,80 1080,0 1440,60 L1440,80 L0,80 Z" fill="#2D1A2A"/>
+  </svg>
+</div>
+
+<!-- BATIK KAUMAN -->
+<div class="dest-panel panel-bk" id="batikkauman">
+  <div class="col-collage">
+    <div class="photo-slot" style="left:7%;top:5%;width:55%;height:50%;transform:rotate(-2.5deg);border:4px solid #E6A341;z-index:3">
+      <img src="Lorong_Waktu.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Lorong Waktu">
+      <div class="photo-placeholder" style="background:#4A1540;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(230,163,65,0.5)">Canting Tulis</span></div>
+      <div class="photo-caption">Pertunjukan tari di lorong waktu</div>
+    </div>
+    <div class="photo-slot" style="right:4%;top:6%;width:38%;height:35%;transform:rotate(2deg);border:4px solid #E6A341;z-index:2">
+      <img src="Selasar.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Selasar">
+      <div class="photo-placeholder" style="background:#3A0D30;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(230,163,65,0.5)">Motif Parang</span></div>
+      <div class="photo-caption">Selasar Kampung</div>
+    </div>
+    <div class="photo-slot" style="left:11%;bottom:6%;width:44%;height:40%;transform:rotate(1.8deg);border:4px solid #E6A341;z-index:4">
+      <img src="Beragam_Contoh_Batik_Solo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Batik Solo">
+      <div class="photo-placeholder" style="background:#5A1A4A;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(230,163,65,0.5)">Perajin</span></div>
+      <div class="photo-caption">Beragam display batik sebagai spot foto</div>
+    </div>
+    <div class="photo-slot" style="right:5%;bottom:5%;width:33%;height:33%;transform:rotate(-2deg);border:4px solid #E6A341;z-index:1">
+      <img src="Perajin.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="Perajin">
+      <div class="photo-placeholder" style="background:#2A0820;display:none"><span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(254,206,121,0.4)">Kain Jadi</span></div>
+      <div class="photo-caption">Perajin</div>
+    </div>
+  </div>
+  <div class="col-text">
+    <p class="dest-eyebrow" data-i18n="bk.eyebrow">03 — Warisan Budaya</p>
+    <h2 class="dest-name" data-i18n="bk.name">Kampung Batik Kauman</h2>
+    <p class="dest-quote" data-i18n="bk.quote">"Di kampung ini, canting diwariskan dari tangan ke tangan sejak berabad-abad — setiap titik lilin yang jatuh di atas kain adalah sebuah doa."</p>
+    <p class="dest-prose" data-i18n="bk.prose">Kampung ini dulunya adalah pemukiman para abdi dalem Keraton Kasunanan. Mereka membatik bukan untuk dijual, tapi sebagai bagian dari kehidupan dan cara mereka menjaga koneksi dengan keraton, dengan tradisi, dengan diri sendiri. Motif-motif yang mereka turunkan dari generasi ke generasi bukan sembarang corak — setiap parang, setiap kawung, setiap semen punya makna yang dulu hanya boleh dikenakan oleh mereka yang punya kedudukan.<br><br>Hari ini, lebih dari tiga puluh perajin masih berkarya di sini. Kamu bisa masuk ke rumah-rumah industri mereka bukan sebagai turis yang melihat dari kejauhan, tapi sebagai tamu yang diajak mendekat. Lihat bagaimana canting dipegang, bagaimana lilin panas ditorehkan ke atas kain putih dengan tangan yang sudah hafal setiap gerakan.<br><br>Hasilnya tidak akan sempurna. Tapi mungkin itulah poinnya — bahwa batik tulis yang sesungguhnya tidak pernah soal kesempurnaan, tapi soal waktu, kesabaran, dan tangan manusia yang meninggalkan jejaknya di atas kain.</p>
+    <div class="dest-info-card">
+      <div class="info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div>
+          <span class="info-label" data-i18n="info.jam">Jam Buka</span>
+          <span class="info-value" data-i18n="bk.jam">Setiap hari, 09.00 – 17.00 WIB</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:1px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <span class="info-label" data-i18n="info.lokasi">Lokasi</span>
+          <span class="info-value">Jl. Dr. Radjiman, Kauman, Pasar Kliwon</span>
+          <a class="info-maps" href="https://maps.google.com/?q=Kampung+Batik+Kauman+Solo" target="_blank" data-i18n="info.maps">Buka di Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===================== HOTEL SECTION ===================== -->
+<section class="hotel-section" id="menginap">
+  <div class="hotel-header reveal">
+    <p class="hotel-label" data-i18n="hotel.label">Rencanakan Menginap</p>
+    <h2 class="hotel-title" data-i18n="hotel.title">Pilih tempat istirahat<br>yang <em>tepat</em> untuk kamu</h2>
+    <p class="hotel-subtitle" data-i18n="hotel.subtitle">Dari butik hotel bergaya heritage hingga penginapan ramah kantong, Solo punya pilihan untuk semua jenis perjalanan.</p>
+  </div>
+
+  <div class="hotel-grid">
+    <!-- Hotel 1 -->
+    <div class="hotel-card reveal">
+      <div class="hotel-accent"></div>
+      <p class="hotel-tier" data-i18n="hotel.tier.luxury">★ Mewah</p>
+      <h3 class="hotel-name">The Sunan Hotel Solo</h3>
+      <p class="hotel-area">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Jl. Ahmad Yani, Pabelan
+      </p>
+      <div class="hotel-stars">★★★★★</div>
+      <p class="hotel-desc" data-i18n="hotel.sunan.desc">"Keanggunan Jawa modern di tengah kota. Kolam renang, spa, dan ballroom yang kerap menjadi pilihan tamu internasional."</p>
+      <div class="hotel-tags">
+        <span class="hotel-tag">Pool</span>
+        <span class="hotel-tag">Spa</span>
+        <span class="hotel-tag">Restaurant</span>
+        <span class="hotel-tag">Free WiFi</span>
+      </div>
+      <p class="hotel-price">Mulai <strong>Rp 850.000</strong> <span data-i18n="hotel.permalam">/ malam</span></p>
+      <a href="https://www.thesunanhotel.com" target="_blank" class="hotel-link" data-i18n="hotel.cta">Lihat detail →</a>
+    </div>
+
+    <!-- Hotel 2 -->
+    <div class="hotel-card reveal">
+      <div class="hotel-accent"></div>
+      <p class="hotel-tier" data-i18n="hotel.tier.mid">◆ Menengah</p>
+      <h3 class="hotel-name">Lorin Solo Hotel</h3>
+      <p class="hotel-area">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Jl. Adi Sucipto, Laweyan
+      </p>
+      <div class="hotel-stars">★★★★</div>
+      <p class="hotel-desc" data-i18n="hotel.lorin.desc">"Hotel bintang empat dengan nuansa resort di tengah kota. Taman luas dan fasilitas lengkap — pilihan keluarga yang solid."</p>
+      <div class="hotel-tags">
+        <span class="hotel-tag">Garden</span>
+        <span class="hotel-tag">Kolam Renang</span>
+        <span class="hotel-tag">Gym</span>
+      </div>
+      <p class="hotel-price">Mulai <strong>Rp 550.000</strong> <span data-i18n="hotel.permalam">/ malam</span></p>
+      <a href="https://www.lorinhotel.com" target="_blank" class="hotel-link" data-i18n="hotel.cta">Lihat detail →</a>
+    </div>
+
+    <!-- Hotel 3 -->
+    <div class="hotel-card reveal">
+      <div class="hotel-accent"></div>
+      <p class="hotel-tier" data-i18n="hotel.tier.boutique">♦ Butik Heritage</p>
+      <h3 class="hotel-name">Rumah Turi</h3>
+      <p class="hotel-area">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Jl. Srikoyo, Laweyan
+      </p>
+      <div class="hotel-stars">★★★★</div>
+      <p class="hotel-desc" data-i18n="hotel.rumahturi.desc">"Eco-boutique hotel dengan konsep kampung Jawa. Dekat dengan Kampung Batik Laweyan, cocok untuk wisatawan yang ingin merasakan Solo yang sesungguhnya."</p>
+      <div class="hotel-tags">
+        <span class="hotel-tag">Eco</span>
+        <span class="hotel-tag">Batik Area</span>
+        <span class="hotel-tag">Cultural Tour</span>
+      </div>
+      <p class="hotel-price">Mulai <strong>Rp 480.000</strong> <span data-i18n="hotel.permalam">/ malam</span></p>
+      <a href="https://www.rumahturi.com" target="_blank" class="hotel-link" data-i18n="hotel.cta">Lihat detail →</a>
+    </div>
+
+    <!-- Hotel 4 -->
+    <div class="hotel-card reveal">
+      <div class="hotel-accent"></div>
+      <p class="hotel-tier" data-i18n="hotel.tier.budget">◇ Budget Friendly</p>
+      <h3 class="hotel-name">Zaboo Hostel</h3>
+      <p class="hotel-area">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Jl. Honggowongso, Serengan
+      </p>
+      <div class="hotel-stars">★★★</div>
+      <p class="hotel-desc" data-i18n="hotel.zaboo.desc">"Hostel bersih dan nyaman dengan komunitas traveler yang aktif. Lokasi strategis, mudah akses ke Keraton dan Pasar Gede."</p>
+      <div class="hotel-tags">
+        <span class="hotel-tag">Dorm Available</span>
+        <span class="hotel-tag">Common Room</span>
+        <span class="hotel-tag">Strategis</span>
+      </div>
+      <p class="hotel-price">Mulai <strong>Rp 120.000</strong> <span data-i18n="hotel.permalam">/ malam</span></p>
+      <a href="https://maps.google.com/?q=Zaboo+Hostel+Solo" target="_blank" class="hotel-link" data-i18n="hotel.cta">Lihat detail →</a>
+    </div>
+
+    <!-- Hotel 5 -->
+    <div class="hotel-card reveal">
+      <div class="hotel-accent"></div>
+      <p class="hotel-tier" data-i18n="hotel.tier.mid">◆ Menengah</p>
+      <h3 class="hotel-name">Azana Style Hotel</h3>
+      <p class="hotel-area">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Jl. Slamet Riyadi, Pusat Kota
+      </p>
+      <div class="hotel-stars">★★★★</div>
+      <p class="hotel-desc" data-i18n="hotel.azana.desc">"Lokasi paling sentral di Slamet Riyadi — jalan utama Solo yang legendaris. Cocok untuk yang ingin bisa berjalan kaki ke mana-mana."</p>
+      <div class="hotel-tags">
+        <span class="hotel-tag">City Center</span>
+        <span class="hotel-tag">Modern</span>
+        <span class="hotel-tag">Rooftop Bar</span>
+      </div>
+      <p class="hotel-price">Mulai <strong>Rp 380.000</strong> <span data-i18n="hotel.permalam">/ malam</span></p>
+      <a href="https://maps.google.com/?q=Azana+Style+Hotel+Solo" target="_blank" class="hotel-link" data-i18n="hotel.cta">Lihat detail →</a>
+    </div>
+
+    <!-- Hotel 6 -->
+    <div class="hotel-card reveal">
+      <div class="hotel-accent"></div>
+      <p class="hotel-tier" data-i18n="hotel.tier.boutique">♦ Butik Heritage</p>
+      <h3 class="hotel-name">Ndalem Ngabean</h3>
+      <p class="hotel-area">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Kauman, dekat Keraton
+      </p>
+      <div class="hotel-stars">★★★★</div>
+      <p class="hotel-desc" data-i18n="hotel.ndalem.desc">"Rumah Jawa kuno yang direstorasi menjadi penginapan butik. Kamar dengan arsitektur pendopo asli — pengalaman menginap yang tidak akan terlupakan."</p>
+      <div class="hotel-tags">
+        <span class="hotel-tag">Heritage</span>
+        <span class="hotel-tag">Jawa Klasik</span>
+        <span class="hotel-tag">Dekat Keraton</span>
+      </div>
+      <p class="hotel-price">Mulai <strong>Rp 650.000</strong> <span data-i18n="hotel.permalam">/ malam</span></p>
+      <a href="https://maps.google.com/?q=Ndalem+Ngabean+Solo" target="_blank" class="hotel-link" data-i18n="hotel.cta">Lihat detail →</a>
+    </div>
+  </div>
+
+  <p class="hotel-note" data-i18n="hotel.note">* Harga perkiraan dan dapat berubah. Selalu cek ketersediaan di platform pemesanan. Jejak Solo tidak berafiliasi dengan hotel manapun.</p>
+</section>
+
+<!-- ===================== TESTIMONIAL ===================== -->
+<section class="testi-section" id="cerita">
+  <div class="testi-grid">
+    <p class="testi-label" data-i18n="testi.label">Suara Wisatawan</p>
+    <div class="testi-card">
+      <p class="testi-text" data-i18n="testi.1">"Saya datang pagi-pagi di Mangkunegaran sebelum rombongan lain tiba. Saat itu sedang ada latihan gamelan — suaranya mengalun ke seluruh pendopo. Saya duduk di sana cukup lama, tidak ingin beranjak."</p>
+      <p class="testi-author">Dheya N · Yogyakarta, 2024</p>
+    </div>
+    <div class="testi-card">
+      <p class="testi-text" data-i18n="testi.2">"Pasar Gede mengubah cara saya melihat pasar tradisional. Kubahnya, suasananya, dan aromanya seperti bukan sekadar tempat belanja, tapi sepotong sejarah yang masih hidup setiap hari."</p>
+      <p class="testi-author">Yuji M · Singapura, Maret 2025</p>
+    </div>
+    <div class="testi-card">
+      <p class="testi-text" data-i18n="testi.3">"Di Kampung Kauman saya belajar mencanting untuk pertama kalinya. Tanganku gemetar, hasilnya jauh dari sempurna, tapi perajin di sana tertawa hangat dan bilang begitulah semua orang mulai."</p>
+      <p class="testi-author">Jesia E · Jakarta, Januari 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="closing-section" id="mulai">
+  <div class="closing-inner reveal">
+    <p class="closing-label" data-i18n="closing.label">Mulai Perjalananmu</p>
+    <h2 class="closing-title" data-i18n="closing.title">Solo menunggu<br>untuk <em>kamu ceritakan</em></h2>
+    <p class="closing-body" data-i18n="closing.body">Setiap kunjungan adalah sebuah bab baru dalam cerita panjang kota ini. Kamu cukup datang, Solo akan melakukan sisanya.</p>
+    <div class="closing-btns">
+      <a href="#destinasi" class="btn-primary" data-i18n="closing.btn1">Jelajahi Destinasi</a>
+      <a href="#menginap" class="btn-outline" data-i18n="closing.btn2">Cari Penginapan</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="tentang">
+  <div>
+    <a href="#beranda" class="footer-brand-name">Jejak <em>Solo</em></a>
+    <p class="footer-tagline" data-i18n="footer.tagline">"Karena setiap perjalanan layak untuk diceritakan kembali dan Solo selalu punya cerita baru untuk ditawarkan."</p>
+    <span class="footer-badge">Prototype v4.0</span>
+    <div class="footer-gold-line"></div>
+  </div>
+  <div class="fcol">
+    <p class="fcol-title" data-i18n="footer.destinasi">Destinasi</p>
+    <a href="#mangkunegaran">Pura Mangkunegaran</a>
+    <a href="#pasargede">Pasar Gede Harjonagoro</a>
+    <a href="#batikkauman">Kampung Batik Kauman</a>
+    <a href="#destinasi" data-i18n="footer.selengkapnya">Selengkapnya →</a>
+  </div>
+  <div class="fcol">
+    <p class="fcol-title" data-i18n="footer.jejaksoloNav">Jejak Solo</p>
+    <a href="#tentang" data-i18n="footer.tentang">Tentang Proyek</a>
+    <a href="#cerita" data-i18n="footer.cerita">Cerita Wisatawan</a>
+    <a href="#menginap" data-i18n="footer.menginap">Rekomendasi Hotel</a>
+    <a href="#mulai" data-i18n="footer.kontak">Kontak</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p data-i18n="footer.copy">© 2026 Jejak Solo · Media-based Storytelling untuk Pariwisata Kota Surakarta</p>
+  <p data-i18n="footer.credit">Dibuat sebagai prototype hasil penelitian untuk Kompetisi Riset Unggulan Kota Surakarta 2026</p>
+</div>
+
+<script>
+/* =====================================================
+   TRANSLATIONS
+   ===================================================== */
+const translations = {
+  id: {
+    "nav.beranda": "Beranda",
+    "nav.destinasi": "Destinasi",
+    "nav.menginap": "Menginap",
+    "nav.cerita": "Cerita",
+    "nav.tentang": "Tentang",
+    "nav.mulai": "Mulai Jelajah",
+
+    "hero.eyebrow": "Sugeng Rawuh ing Kitha Budaya",
+    "hero.title-2": "Kota Solo",
+    "hero.sub": "Di sini, waktu bergerak lebih lambat — dan setiap sudut menyimpan cerita.",
+    "hero.btn": "Jelajahi Sekarang",
+
+    "batik.label": "Warisan yang Hidup",
+    "batik.title": "Solo bukan sekadar kota,<br>ia adalah <em>cerita</em> yang tak selesai",
+    "batik.body": "Tiga destinasi. Tiga karakter. Tiga cara berbeda untuk memahami mengapa Solo disebut kota yang tak pernah kehilangan jiwanya. Dari pendopo yang megah, kubah pasar yang berderit di pagi buta, hingga lorong kampung yang berbau lilin batik — semuanya menunggu untuk diceritakan.",
+
+    "mg.eyebrow": "01 — Istana Budaya",
+    "mg.name": "Pura Mangkunegaran",
+    "mg.quote": "\"Masuk ke Mangkunegaran bukan sekadar mengunjungi bangunan tua — ini tentang merasakan napas Jawa yang masih berdenyut di antara pilar-pilarnya.\"",
+    "mg.prose": "Istana ini lahir dari perlawanan. Raden Mas Said, seorang pangeran muda yang menolak tunduk, mengangkat senjata selama bertahun-tahun melawan kekuasaan Kasunanan. Bukan karena dendam, tapi karena keyakinan bahwa ada cara lain untuk menjadi Jawa yang bermartabat.<br><br>Perjuangan itu akhirnya berakhir di meja perundingan Perjanjian Salatiga, pada 1757. Raden Mas Said tidak kalah — Mangkunegaran bukanlah hadiah, melainkan hasil perjuangan.<br><br>Hari ini, pendopo agungnya masih berdiri kokoh tanpa satu pun paku besi. Kalau kamu datang di pagi Rabu atau Sabtu, kamu mungkin akan mendengar gamelan mengalun dari dalam — bukan untuk pertunjukan, tapi karena di sini, seni memang masih cara hidup.",
+    "mg.jam": "Selasa – Minggu, 09.00 – 14.00 WIB",
+
+    "pg.eyebrow": "02 — Pasar Bersejarah",
+    "pg.name": "Pasar Gede Harjonagoro",
+    "pg.quote": "\"Aroma rempah dan tawa pedagang berpadu di bawah kubah art deco peninggalan Belanda — datanglah sebelum matahari sepenuhnya naik.\"",
+    "pg.prose": "Di bawah kubah art deco peninggalan Thomas Karsten, pedagang sudah berderet sejak subuh. Aroma rempah, bau tanah basah dari sayuran segar, dan kepulan uap dari mangkok timlo bercampur jadi satu. Ini adalah tempat di mana Solo memulai harinya setiap hari, selama ratusan tahun.<br><br>Karsten merancang Pasar Gede pada 1930 dengan cara yang tidak biasa — kubah besarnya berdialog dengan detail-detail tradisional Jawa, seolah bangunan ini mengerti di mana ia berdiri dan untuk siapa ia dibangun.<br><br>Jangan lewatkan es dawet telasih, atau cabuk rambak di dekat pintu masuk. Dan kalau kamu datang saat Grebeg Sudiroprajan, kamu akan tahu bahwa Solo merayakan perbedaan dengan cara yang sangat tenang dan sangat indah.",
+    "pg.jam": "Setiap hari, 06.00 – 17.00 WIB",
+
+    "bk.eyebrow": "03 — Warisan Budaya",
+    "bk.name": "Kampung Batik Kauman",
+    "bk.quote": "\"Di kampung ini, canting diwariskan dari tangan ke tangan sejak berabad-abad — setiap titik lilin yang jatuh di atas kain adalah sebuah doa.\"",
+    "bk.prose": "Kampung ini dulunya adalah pemukiman para abdi dalem Keraton Kasunanan. Mereka membatik bukan untuk dijual, tapi sebagai bagian dari kehidupan. Motif-motif yang mereka turunkan bukan sembarang corak — setiap parang, setiap kawung, setiap semen punya makna yang dulu hanya boleh dikenakan oleh mereka yang punya kedudukan.<br><br>Hari ini, lebih dari tiga puluh perajin masih berkarya di sini. Kamu bisa masuk ke rumah-rumah industri mereka bukan sebagai turis dari kejauhan, tapi sebagai tamu yang diajak mendekat. Lihat bagaimana canting dipegang, bagaimana lilin panas ditorehkan ke atas kain putih.<br><br>Hasilnya tidak akan sempurna. Tapi mungkin itulah poinnya — bahwa batik tulis yang sesungguhnya tidak pernah soal kesempurnaan, tapi soal waktu, kesabaran, dan tangan manusia yang meninggalkan jejaknya.",
+    "bk.jam": "Setiap hari, 09.00 – 17.00 WIB",
+
+    "info.jam": "Jam Buka",
+    "info.lokasi": "Lokasi",
+    "info.maps": "Buka di Maps →",
+
+    "hotel.label": "Rencanakan Menginap",
+    "hotel.title": "Pilih tempat istirahat<br>yang <em>tepat</em> untuk kamu",
+    "hotel.subtitle": "Dari butik hotel bergaya heritage hingga penginapan ramah kantong, Solo punya pilihan untuk semua jenis perjalanan.",
+    "hotel.tier.luxury": "★ Mewah",
+    "hotel.tier.mid": "◆ Menengah",
+    "hotel.tier.boutique": "♦ Butik Heritage",
+    "hotel.tier.budget": "◇ Budget Friendly",
+    "hotel.sunan.desc": "\"Keanggunan Jawa modern di tengah kota. Kolam renang, spa, dan ballroom yang kerap menjadi pilihan tamu internasional.\"",
+    "hotel.lorin.desc": "\"Hotel bintang empat dengan nuansa resort di tengah kota. Taman luas dan fasilitas lengkap — pilihan keluarga yang solid.\"",
+    "hotel.rumahturi.desc": "\"Eco-boutique hotel dengan konsep kampung Jawa. Dekat dengan Kampung Batik Laweyan, cocok untuk wisatawan yang ingin merasakan Solo yang sesungguhnya.\"",
+    "hotel.zaboo.desc": "\"Hostel bersih dan nyaman dengan komunitas traveler yang aktif. Lokasi strategis, mudah akses ke Keraton dan Pasar Gede.\"",
+    "hotel.azana.desc": "\"Lokasi paling sentral di Slamet Riyadi — jalan utama Solo yang legendaris. Cocok untuk yang ingin bisa berjalan kaki ke mana-mana.\"",
+    "hotel.ndalem.desc": "\"Rumah Jawa kuno yang direstorasi menjadi penginapan butik. Kamar dengan arsitektur pendopo asli — pengalaman menginap yang tidak akan terlupakan.\"",
+    "hotel.permalam": "/ malam",
+    "hotel.cta": "Lihat detail →",
+    "hotel.note": "* Harga perkiraan dan dapat berubah. Selalu cek ketersediaan di platform pemesanan. Jejak Solo tidak berafiliasi dengan hotel manapun.",
+
+    "testi.label": "Suara Wisatawan",
+    "testi.1": "\"Saya datang pagi-pagi di Mangkunegaran sebelum rombongan lain tiba. Saat itu sedang ada latihan gamelan — suaranya mengalun ke seluruh pendopo. Saya duduk di sana cukup lama, tidak ingin beranjak.\"",
+    "testi.2": "\"Pasar Gede mengubah cara saya melihat pasar tradisional. Kubahnya, suasananya, dan aromanya seperti bukan sekadar tempat belanja, tapi sepotong sejarah yang masih hidup setiap hari.\"",
+    "testi.3": "\"Di Kampung Kauman saya belajar mencanting untuk pertama kalinya. Tanganku gemetar, hasilnya jauh dari sempurna, tapi perajin di sana tertawa hangat dan bilang begitulah semua orang mulai.\"",
+
+    "closing.label": "Mulai Perjalananmu",
+    "closing.title": "Solo menunggu<br>untuk <em>kamu ceritakan</em>",
+    "closing.body": "Setiap kunjungan adalah sebuah bab baru dalam cerita panjang kota ini. Kamu cukup datang, Solo akan melakukan sisanya.",
+    "closing.btn1": "Jelajahi Destinasi",
+    "closing.btn2": "Cari Penginapan",
+
+    "footer.tagline": "\"Karena setiap perjalanan layak untuk diceritakan kembali dan Solo selalu punya cerita baru untuk ditawarkan.\"",
+    "footer.destinasi": "Destinasi",
+    "footer.jejaksoloNav": "Jejak Solo",
+    "footer.tentang": "Tentang Proyek",
+    "footer.cerita": "Cerita Wisatawan",
+    "footer.menginap": "Rekomendasi Hotel",
+    "footer.kontak": "Kontak",
+    "footer.selengkapnya": "Selengkapnya →",
+    "footer.copy": "© 2026 Jejak Solo · Media-based Storytelling untuk Pariwisata Kota Surakarta",
+    "footer.credit": "Dibuat sebagai prototype hasil penelitian untuk Kompetisi Riset Unggulan Kota Surakarta 2026",
+  },
+
+  en: {
+    "nav.beranda": "Home",
+    "nav.destinasi": "Destinations",
+    "nav.menginap": "Stay",
+    "nav.cerita": "Stories",
+    "nav.tentang": "About",
+    "nav.mulai": "Start Exploring",
+
+    "hero.eyebrow": "Welcome to the City of Culture",
+    "hero.title-2": "Solo City",
+    "hero.sub": "Here, time moves slower — and every corner holds a story.",
+    "hero.btn": "Explore Now",
+
+    "batik.label": "Living Heritage",
+    "batik.title": "Solo is not just a city —<br>it is a <em>story</em> that never ends",
+    "batik.body": "Three destinations. Three characters. Three different ways to understand why Solo is called the city that never loses its soul. From a grand pendopo, to a colonial market dome at dawn, to a kampung alley that smells of batik wax — all of them wait to be told.",
+
+    "mg.eyebrow": "01 — Cultural Palace",
+    "mg.name": "Pura Mangkunegaran",
+    "mg.quote": "\"Entering Mangkunegaran is not merely visiting an old building — it is about feeling the Javanese breath that still pulses between its pillars.\"",
+    "mg.prose": "This palace was born from resistance. Raden Mas Said, a young prince who refused to submit, took up arms for years against the Kasunanan. Not out of grudge, but from the belief that there was another way to live with Javanese dignity.<br><br>The struggle ended at the Salatiga Agreement in 1757. Raden Mas Said did not lose — Mangkunegaran was not a gift, but a hard-won right.<br><br>Today, its grand pendopo still stands without a single iron nail. If you come on a Wednesday or Saturday morning, you may hear gamelan drifting from within — not for performance, but because here, art is still a way of life.",
+    "mg.jam": "Tue – Sun, 09:00 – 14:00 WIB",
+
+    "pg.eyebrow": "02 — Historic Market",
+    "pg.name": "Pasar Gede Harjonagoro",
+    "pg.quote": "\"The scent of spices and the laughter of traders blend beneath the Dutch colonial art deco dome — come before the sun fully rises.\"",
+    "pg.prose": "Beneath Thomas Karsten's art deco dome, vendors have lined up since before dawn. Spice aromas, the earthy scent of fresh vegetables, and steam rising from bowls of timlo soup all blend into one. This is not just any market — it is where Solo begins its day, every day, for hundreds of years.<br><br>Karsten designed Pasar Gede in 1930 in an unusual way, refusing to impose a purely European style. His grand dome dialogues with traditional Javanese details, as if the building knew exactly where it stood and for whom it was built.<br><br>Don't miss es dawet telasih in the left corner, or cabuk rambak near the main entrance. And if you're lucky enough to visit during Grebeg Sudiroprajan, you'll discover that Solo celebrates difference in the quietest, most beautiful way.",
+    "pg.jam": "Every day, 06:00 – 17:00 WIB",
+
+    "bk.eyebrow": "03 — Cultural Heritage",
+    "bk.name": "Kampung Batik Kauman",
+    "bk.quote": "\"In this village, the canting has been passed from hand to hand for centuries — each drop of wax on cloth is a prayer.\"",
+    "bk.prose": "This kampung was once home to the royal servants of Keraton Kasunanan. They made batik not to sell, but as part of life itself. The motifs passed down through generations carry deep meaning — each parang, each kawung, each semen was once reserved only for those of noble standing.<br><br>Today, more than thirty artisans still work here. You can enter their home workshops not as a distant tourist, but as a welcomed guest. Watch how the canting is held, how hot wax is drawn across white cloth by hands that have memorized every motion.<br><br>The result won't be perfect. But perhaps that is the point — true hand-drawn batik was never about perfection, but about time, patience, and a human hand leaving its trace on cloth.",
+    "bk.jam": "Every day, 09:00 – 17:00 WIB",
+
+    "info.jam": "Opening Hours",
+    "info.lokasi": "Location",
+    "info.maps": "Open in Maps →",
+
+    "hotel.label": "Plan Your Stay",
+    "hotel.title": "Find the <em>right</em> place<br>to rest in Solo",
+    "hotel.subtitle": "From heritage boutique hotels to budget-friendly stays, Solo has options for every kind of journey.",
+    "hotel.tier.luxury": "★ Luxury",
+    "hotel.tier.mid": "◆ Mid-Range",
+    "hotel.tier.boutique": "♦ Heritage Boutique",
+    "hotel.tier.budget": "◇ Budget Friendly",
+    "hotel.sunan.desc": "\"Modern Javanese elegance in the heart of the city. Pool, spa, and a ballroom popular with international guests.\"",
+    "hotel.lorin.desc": "\"Four-star hotel with a resort feel in the city. Spacious gardens and complete facilities — a solid family choice.\"",
+    "hotel.rumahturi.desc": "\"Eco-boutique hotel with a Javanese kampung concept. Near Kampung Batik Laweyan, perfect for travelers wanting the authentic Solo experience.\"",
+    "hotel.zaboo.desc": "\"Clean and comfortable hostel with an active traveler community. Strategic location, easy access to Keraton and Pasar Gede.\"",
+    "hotel.azana.desc": "\"The most central location on the legendary Slamet Riyadi avenue. Perfect for those who want to walk everywhere.\"",
+    "hotel.ndalem.desc": "\"An ancient Javanese house restored into a boutique inn. Rooms with original pendopo architecture — an unforgettable stay.\"",
+    "hotel.permalam": "/ night",
+    "hotel.cta": "View details →",
+    "hotel.note": "* Prices are approximate and subject to change. Always check availability on booking platforms. Jejak Solo is not affiliated with any hotel.",
+
+    "testi.label": "Visitor Stories",
+    "testi.1": "\"I arrived early at Mangkunegaran before other groups came. Gamelan practice was underway — the music floated through the entire pendopo. I sat there for a long time, unwilling to leave.\"",
+    "testi.2": "\"Pasar Gede changed how I see traditional markets. The dome, the atmosphere, the aromas — it felt less like a place to shop and more like a living piece of history.\"",
+    "testi.3": "\"At Kampung Kauman I tried batik-making for the first time. My hands trembled, the result was far from perfect, but the artisan laughed warmly and said that's how everyone starts.\"",
+
+    "closing.label": "Begin Your Journey",
+    "closing.title": "Solo is waiting<br>for <em>you to tell its story</em>",
+    "closing.body": "Every visit is a new chapter in this city's long story. You just need to arrive — Solo will do the rest.",
+    "closing.btn1": "Explore Destinations",
+    "closing.btn2": "Find a Hotel",
+
+    "footer.tagline": "\"Because every journey deserves to be told again, and Solo always has a new story to offer.\"",
+    "footer.destinasi": "Destinations",
+    "footer.jejaksoloNav": "Jejak Solo",
+    "footer.tentang": "About the Project",
+    "footer.cerita": "Visitor Stories",
+    "footer.menginap": "Hotel Recommendations",
+    "footer.kontak": "Contact",
+    "footer.selengkapnya": "See more →",
+    "footer.copy": "© 2026 Jejak Solo · Media-based Storytelling for Surakarta City Tourism",
+    "footer.credit": "Created as a research prototype for Kompetisi Riset Unggulan Kota Surakarta 2026",
+  }
+};
+
+/* =====================================================
+   LANGUAGE SWITCHER
+   ===================================================== */
+let currentLang = 'id';
+
+function setLang(lang) {
+  currentLang = lang;
+
+  // Update toggle buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+  });
+
+  // Update all translated elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const text = translations[lang][key];
+    if (text !== undefined) {
+      el.innerHTML = text;
+    }
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+}
+
+/* =====================================================
+   SCROLL REVEAL
+   ===================================================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  revealObserver.observe(el);
+});
+
+/* =====================================================
+   SMOOTH SCROLL OFFSET (for sticky navbar)
+   ===================================================== */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const navHeight = document.querySelector('.navbar').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
